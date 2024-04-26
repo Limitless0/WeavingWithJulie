@@ -3,7 +3,7 @@ package com.julie.weavingwithjulie;
 import java.util.*;
 
 public class LettersToHex {
-	private Map<Character, Character> letterToHex = new HashMap<>();
+	private final Map<Character, Character> letterToHex = new HashMap<>();
 	public static final char[] letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p'};
 
 	public void init() {
@@ -32,7 +32,7 @@ public class LettersToHex {
 			char character = input.toLowerCase(Locale.ROOT).charAt(ii);
 			builder.append(letterToHex.get(character));
 		}
-		System.out.println(builder.toString());
+		System.out.println(builder);
 		return builder.toString();
 	}
 
