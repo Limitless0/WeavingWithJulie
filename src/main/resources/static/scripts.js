@@ -1,8 +1,13 @@
 function submitCode() {
 
-    const textArea = document.getElementById("code");
+    let textArea = document.getElementById("code");
+    let text = textArea.value
+
+    console.log("Example")
 
     let post = new XMLHttpRequest();
     post.open("POST", "/codeIn", true);
-    post.send(textArea.value());
+
+    post.send(text);
+    console.log(text)
 }

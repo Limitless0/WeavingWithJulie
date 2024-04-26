@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.File;
@@ -16,13 +17,13 @@ import java.util.BitSet;
 import java.util.Scanner;
 
 @SpringBootApplication
+@RestController
 public class WeavingWithJulieApplication {
 
-	private LettersToHex translationBuddy;
+	private final LettersToHex translationBuddy;
 
-	public WeavingWithJulieApplication setTranslationBuddy(LettersToHex translationBuddy) {
-		this.translationBuddy = translationBuddy;
-		return this;
+	public WeavingWithJulieApplication () {
+		this.translationBuddy = new LettersToHex();
 	}
 
 	public static void main(String[] args) {
@@ -31,11 +32,12 @@ public class WeavingWithJulieApplication {
 
 	@GetMapping("/input")
 	ModelAndView inputView () {
-		return new ModelAndView("index");
+		return new ModelAndView("../static/index");
 	}
 
-	@PostMapping("/codeIn")
+	@PostMapping(value = "/codeIn")
 	void codeIn(@RequestBody String input) {
+		System.out.println(input);
 		System.out.println(translationBuddy.translate(input));
 	}
 }
