@@ -35,10 +35,12 @@ public class WeavingWithJulieApplication {
 }
 
 /*
+//The following code was used to generate out6.txt and out8.txt 
+//it is preserved here by request - usually I would delete it 
 
 void filestuff() throws IOException {
-File wordlist = new File("/Users/abanoubiskander/Downloads/words_alpha.txt");
-		File output = new File("/Users/abanoubiskander/IdeaProjects/weavingWithJulie/src/main/resources/static/out6.txt");
+File wordlist = new File("path/to/words_alpha.txt");
+		File output = new File("path/to/output.txt");
 		if (!output.exists()) {
 			try {
 				System.out.println(output.createNewFile());
