@@ -8,14 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.math.BigInteger;
-import java.util.BitSet;
-import java.util.Scanner;
-
 @SpringBootApplication
 @RestController
 public class WeavingWithJulieApplication {
